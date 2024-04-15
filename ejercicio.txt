@@ -1,0 +1,5 @@
+Pedir nombre, apellido y edad
+
+imprimir frase con estos 3 datos;
+
+"Te llamas fulano de tal, y tienes tantos años"
