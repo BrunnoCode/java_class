@@ -1,8 +1,6 @@
 import java.util.Scanner;
 
-import javax.lang.model.type.NullType;
-
-public class asociacion {
+public class Asociacion {
 
   public static void main(String[] args) {
     System.out.println("Ayudando asociación.");
@@ -12,7 +10,6 @@ public class asociacion {
     int cuantia = 0;
     System.out.println("Quieres donar para ayudar la asociación ?");
     String respuesta = scan.nextLine();
-    int entero = 0;
    do {
       System.out.println("Qué cantidad quieres donar?");
       cuantia = scan.nextInt();
@@ -24,8 +21,10 @@ public class asociacion {
     } while(!respuesta.equalsIgnoreCase("no"));
     if (respuesta.equalsIgnoreCase("no"))
       System.out.println("Me voy, esta vida de pedir es una mierda :(");
-    System.out.println("Personas Donantes: " + personasDonantes);
-    System.out.println("Valor recaudado: " + cantidad);
+    else {
+      System.out.println("Personas Donantes: " + personasDonantes);
+      System.out.println("Valor recaudado: " + cantidad);
+    }
     scan.close();
   }
 }
