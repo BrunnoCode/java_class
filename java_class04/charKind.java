@@ -7,6 +7,5 @@ public class charKind {
     Scanner scan = new Scanner(System.in);
     String text = scan.nextLine();
     scan.close();
-    
   }
 }
