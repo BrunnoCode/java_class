@@ -1,5 +1,7 @@
 
+import java.util.Random;
 import java.util.Scanner;
+import java.lang.System;
 
 public class premioIbiza{
 
@@ -11,7 +13,17 @@ public class premioIbiza{
     {
       do {
             System.out.print("Cuantos participantes seran?: ");
-            int list = scan.nextInt();
+            int list;
+            while(!scan.hasNextInt())
+            {
+              System.out.println("Error: insira valores numericos!");
+              scan.next();
+            }
+            list = scan.nextInt();
+            if (list < 2){
+              System.out.println("Porfavor debe haber pelo menos 2 personas!.");
+              list = scan.nextInt();
+            }
             System.out.println("Escriba los nombres de los " + list + " participantes del sorteo:");
             String[] candidates = new String[list];
             scan.nextLine();
@@ -35,11 +47,11 @@ public class premioIbiza{
               } catch (InterruptedException event) {
                 event.printStackTrace();
               }
-              System.out.print("/");
+              System.out.print("#");
             }
-            int sort = (int)Math.floor(Math.random() * (list-1) + 1);
+            Random random = new Random();
             System.out.println("\n\nEl ganador/a es: ");
-            System.out.println("Enhorabuena!!! " + candidates[sort].toUpperCase());
+            System.out.println("Enhorabuena!!! " + candidates[random.nextInt(list)].toUpperCase() + ", que disfrute Ibiza!!!");
             System.out.println("\nSorteamos de nuevo, si o no?");
             user = scan.nextLine();
           } while (user.equalsIgnoreCase("si"));
