@@ -18,33 +18,42 @@ public class arrayOdd {
     for (int num : arrayUser){
       System.out.print(num + ", ");
     }
-    System.out.println("\nPresione qualquer digito para continuar.");
-    scan.nextInt();
+    System.out.println("\n----------------------------------\n");
     System.out.println("Ahora vamos separarlo por impares y pares?, se si presione 1, no presione 0");
-    int res = scan.nextInt();
+    int res = scan.nextInt(); System.out.println("\n----------------------------------\n");
     if (res == 1)
     { 
-      int oddArray[] = {0};
-      int evenArray[] = {0};
       int j = 0;
+      int k = 0;
       for (int i = 0; i < arrayUser.length; i++){
         if (arrayUser[i] % 2 == 0)
-          evenArray[i] = arrayUser[i];
+          k++;
         else
-          oddArray[j] = arrayUser[j++];
+          j++;
       }
+      int evenArray[] = new int[k];
+      int oddArray[] = new int[j];
+      int i = 0; k = 0; j = 0;
+      while(i < arrayUser.length){
+        if (arrayUser[i] % 2 == 0)
+          evenArray[k++] = arrayUser[i];
+        else
+          oddArray[j++] = arrayUser[i];
+        i++;
+      }
+
       System.out.println("Array Original");
-      for (int index : arrayUser){
-        System.out.print(index + ", ");
-      }
+      for (int indexUsr : arrayUser){
+        System.out.print(indexUsr + "| ");
+      } System.out.println("\n----------------------------------\n");
       System.out.println("Array de Pares");
-      for (int index : evenArray){
-        System.out.print(index + ", ");
-      }
+      for (int indexEven : evenArray){
+        System.out.print(indexEven + "| ");
+      } System.out.println("\n----------------------------------\n");
       System.out.println("Array de Impares");
-      for (int index : oddArray){
-        System.out.print(index + ", ");
-      }
+      for (int indexOdd : oddArray){
+        System.out.print(indexOdd + "| ");
+      }System.out.println("\n----------------------------------\n");
     }else {
       System.out.println("Programa finalizado");
       scan.close();
