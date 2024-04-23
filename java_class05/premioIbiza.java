@@ -39,7 +39,7 @@ public class premioIbiza{
             }
             int sort = (int)Math.floor(Math.random() * (list-1) + 1);
             System.out.println("\n\nEl ganador/a es: ");
-            System.out.println("Enhorabuena!!! " + candidates[sort]);
+            System.out.println("Enhorabuena!!! " + candidates[sort].toUpperCase());
             System.out.println("\nSorteamos de nuevo, si o no?");
             user = scan.nextLine();
           } while (user.equalsIgnoreCase("si"));
