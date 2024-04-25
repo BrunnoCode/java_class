@@ -21,12 +21,15 @@ public class fiesta{
     listguests.add("Pepi");
     listguests.add("Silvester");
     times(5000);
+    System.out.println("Lista de Invitados Actualizada: "+listguests);
     writingStr("\n\nTe encuentras a Eva, que dice que le cueles la tercera\n", 50);
     System.out.print("OK, actualizando lista");
     writingStr("......\n", 500);
     if(listguests.contains("Eva")){
       int index = listguests.indexOf("Eva");
+      listguests.remove(index);
       String replace = listguests.get(2);
+      listguests.remove(2);
       listguests.add(index, replace);
       listguests.add(2, "Eva");
       System.out.println("Lista de Invitados Actualizada: "+listguests);
