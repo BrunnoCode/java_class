@@ -24,8 +24,14 @@ public class fiesta{
     writingStr("\n\nTe encuentras a Eva, que dice que le cueles la tercera\n", 50);
     System.out.print("OK, actualizando lista");
     writingStr("......\n", 500);
-    
-    System.out.println("Lista de Invitados Actualizada: "+listguests);
+    if(listguests.contains("Eva")){
+      int index = listguests.indexOf("Eva");
+      String replace = listguests.get(2);
+      listguests.add(index, replace);
+      listguests.add(2, "Eva");
+      System.out.println("Lista de Invitados Actualizada: "+listguests);
+    } else
+        System.out.println("\nOhh Eva no estaba en la lista, vaya que lío!");
 
 
   }
