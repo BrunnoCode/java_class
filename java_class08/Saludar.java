@@ -3,19 +3,16 @@ import java.util.Scanner;
 public class Saludar{
   public static void main(String[] args){
     System.out.println("Ejercicio 1: saludo.");
-    System.out.println("\n\nComo te llamas ?");
-    Scanner scan = new Scanner(System.in);
-    String usr = scan.nextLine();
     hola();
-    System.out.println(" "+usr);
-    scan.close();
   }
-
+  // Parte 1 sin parametros
   public static void hola(){
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("\n\nCómo te llamas ?");
+    String name = scanner.nextLine();
     System.out.print("Escriba un saludo: ");
-    Scanner scan = new Scanner(System.in);
-    String Saudacion = scan.nextLine();
-    scan.close();
-    System.out.print(Saudacion);
+    String Saudacion = scanner.nextLine();
+    System.out.print(Saudacion + " " + name);
+    scanner.close();
   }
 }
