@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Calcular{
   public static void main(String[] args){
-    System.out.println("Indique que operación quieres hacer ? sumar, restar, multiplicar, dividir o resto: ");
+    System.out.println("Indique que operación quieres hacer ? sumar, restar, multiplicar, dividir o resto");
     Scanner scan = new Scanner(System.in);
     String operation = scan.nextLine();
     switch (operation) {
