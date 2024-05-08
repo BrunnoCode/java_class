@@ -9,27 +9,19 @@ public class CacatuaCacahuete{
     } catch (InterruptedException e) {
       e.printStackTrace();
     }
-    int comida = 0;
     int cantidad = 0;
+    String comida;
     do {
       comida = askForFood(scan);
-      if (comida > 0){
-        System.out.println("Esto si es cacahuete\uD83D\uDE00, cúantos hay?");
-        cantidad = scan.nextInt();
-        if (cantidad < 10){
-          System.out.println("Miserable, esto es muy poco, pero dormiré y breve me despertaré\uD83E\uDD26️!!!");
-          dormindo(cantidad);
-        } else {
-            System.out.println("dormiendo feli\uD83D\uDCA4...");
-            dormindo(cantidad);
-          }
-      } 
-      if(comida == 0) {
-            System.out.println("Esto no es cacahuete, DAME CACAHUETE!!! o escriba salir y dejame en paz con hambre \uD83D\uDE21");
-            times(1000);
+      if (comida.equalsIgnoreCase("cacahuete")){
+          sleepCacatua(comida, cantidad, scan);
+      } else if (comida.equalsIgnoreCase("salir")){
+         return;
+      } else {
+          System.out.println("DAME CACAHUETE!!! o escriba salir y dejame morrir de hambre \uD83D\uDE21");
+          times(1000);
       }
-      comida = askForFood(scan);
-    } while(comida != 2);
+    } while(!comida.equalsIgnoreCase("salir"));
     scan.close();
   }
   public static void times(int t){
@@ -39,17 +31,25 @@ public class CacatuaCacahuete{
     e.printStackTrace();
   }
 }
-  public static int askForFood(Scanner scan){
-    int res = 0;
-    String usr;
+  public static void sleepCacatua(String comida, int cantidad, Scanner scan){
+    if (comida.equalsIgnoreCase("cacahuete")){
+      System.out.println("Esto si es cacahuete\uD83D\uDE00, cúantos hay?");
+      cantidad = scan.nextInt();
+      if (cantidad < 10){
+        System.out.println("Miserable, esto es muy poco, pero dormiré y breve me despertaré\uD83E\uDD26️!!!");
+        dormindo(cantidad);
+      } else {
+          System.out.println("dormiendo feli\uD83D\uDCA4...");
+          dormindo(cantidad);
+        }
+    } 
+  }
+
+
+  public static String askForFood(Scanner scan){
+    String res = "";
     System.out.println("Qué comida me das\uD83D\uDE05?");
-    usr = scan.nextLine();
-    if(usr.equalsIgnoreCase("cacahuete"))
-      res = 1;
-    if (!usr.equalsIgnoreCase("cacahuete"))
-      res = 0;
-    if(usr.equalsIgnoreCase("salir"))
-      res = 2;
+    res = scan.nextLine();
     return res;
   }
   public static void dormindo(int t){
